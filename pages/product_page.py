@@ -18,6 +18,9 @@ class ProductPage(BasePage):
         alert_info_price = self.browser.find_element(*ProductPageLocators.ALERT_INFO_PRICE)
         assert price.text == alert_info_price.text, "The price must be the same in the description and purchase notification."
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
 
 
 
