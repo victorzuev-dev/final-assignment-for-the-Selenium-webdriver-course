@@ -31,7 +31,7 @@ class LoginPage(BasePage):
         password_field_2.send_keys(password)
         button_registration = browser.find_element(*LoginPageLocators.BUTTON_REGISTRATION)
         button_registration.click()
-        assert browser.find_element(*BasePageLocators.SUCCESS_MESSAGE_REGISTRATION), "Fail registration"
+        assert self.is_element_present(*BasePageLocators.SUCCESS_MESSAGE_REGISTRATION), "Fail registration"
 
 
 
